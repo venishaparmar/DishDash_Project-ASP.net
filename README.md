@@ -24,5 +24,4 @@ Payment options will be provided online, and customers can also choose to pay in
 - <b>Kitchen side panel:</b> The kitchen side panel is used by the kitchen staff to view and manage customer orders. This allows them to prepare orders quickly and efficiently. 
 - Online Ordering Option: This web app will also have an option for ordering food from the home.This will be a different panel in the application.
 
-Click on the link to see output video : https://drive.google.com/file/d/1VEIgJQ6mp35dU_p6FHL8K3nqDgHrmUWG/view?usp=drive_link
-
+Click on the link to see output video : https://drive.google.com/file/d/1kLKOMDlUoWxa7fhi1lZli_BQtP0kr2pg/view?usp=sharing
