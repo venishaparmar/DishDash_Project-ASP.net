@@ -1,0 +1,75 @@
+﻿@model DishDash.Product
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+        <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+            Delete Category
+        </h1>
+
+        <div class="card">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.id)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.id)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.title)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.title)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        Price:
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.price)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        Active:
+                    </dt>
+                    <dd class="col-sm-9">
+                        @if (Model.active)
+                        {
+                            <text>@(Model.active ? "Yes" : "No")</text>
+                        }
+                        else
+                        {
+                            <text>N/A</text>
+                        }
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        Image:
+                    </dt>
+                    <dd class="col-sm-9">
+                        @if (Model.image != null && Model.image.Length > 0)
+                        {
+                            <img src="data:image;base64,@Convert.ToBase64String(Model.image)" width="100" />
+                        }
+                        else
+                        {
+                            <span>No Image</span>
+                        }
+                    </dd>
+                </dl>
+                <hr />
+                @using (Html.BeginForm("delete_food", "Admin", new { foodId = Model.id.ToString() }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-danger">Delete</button>
+                    @Html.ActionLink("Cancel", "manage_food", null, new { @class = "btn-all btn-secondary" })
+                }
+            </div>
+        </div>
+    </div>
+</div>

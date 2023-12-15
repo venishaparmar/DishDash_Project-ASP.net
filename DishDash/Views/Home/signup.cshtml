@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "signup";
+}
+<link href="~/Content/signup_style.css" rel="stylesheet" />
+<script src="~/Scripts/validation.js"></script>
+    <div class="inner-banner" >
+
+        <div class="inner">
+            <h2>Welcome To the Fooddy World</h2>
+            <div class="breadcrumb-list-wrap">
+                <ul>
+                    <li>Join Us By Signing In</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <section class="feedback-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="feedback-img">
+                        <img src="~/Content/index_img/feedback.png" alt="" />
+                    </div>
+                </div>
+                <div class="col-md-6 ps-lg-5 mt-4 mt-md-0">
+                    <h2 class="main-title">SignUp</h2>
+                    <div class="feedback-form">
+                        <div id="emailMsg"></div>
+                        <form class="needs-validation" id="contact_form" novalidate method="post">
+                            <input type="hidden" name="sendEmail" value="ok" />
+
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Enter Full Name" required />
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    Name must contain only letters.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter valid email address" required />
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Create Password for your Account" required />
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirm Your Password" required />
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+
+                            <div class="login-link">Already Have an Account? <strong><u>
+                                <a href="@Url.Action("login", "Home")">Login</a></u></strong></div>
+
+                            <div class="sign-up-btn">
+                                <button class="btn btn-primary" type="submit" id="btn_submit" disabled>SignUp</button>
+                                @*<div class="g-signin2" data-onsuccess="onSignIn">
+                                    <button type="button" class="login-with-google-btn">
+                                        Sign in with Google
+                                    </button>
+                                </div>*@
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+

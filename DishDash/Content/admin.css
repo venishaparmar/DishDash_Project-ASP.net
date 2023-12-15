@@ -1,0 +1,279 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+.menu-content {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    padding: 3% 0;
+    justify-content: center;
+    scroll-behavior: smooth;
+}
+.menu{
+    background-color:#FEB100 ;
+    border-bottom: 1px solid rgb(162, 119, 0);
+}
+    
+
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #000000;
+}
+
+.menu ul li:hover a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #FEB100;
+}
+
+.menu img {
+    max-width: 200px;
+    height: 90px;
+    padding-top: 1rem;
+    margin-right: 2rem;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: contents;
+}
+.menu ul li:hover {
+    color: #FEB100; /* Change text color on hover */
+    background-color: #000000; /* Change background color on hover */
+    transform: translateX(5px); /* Move the element to the right on hover */
+}
+.menu ul li {
+    display: inline;
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.8rem;
+    border-radius: 2rem;
+    border: solid 2px #000000;
+    transition: all .6s ease-in-out;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.menu ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%; 
+    height: 100%;
+    background-color: #000000; 
+    z-index: -1; 
+    transition: left 1s, background-color 1s; 
+}
+
+.menu ul li:hover::before {
+    left: 0; 
+    background-color: #000000; 
+}
+
+.details
+{
+    font-weight: 600; 
+    text-align: center; 
+    font-size:1.5rem ;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    
+}
+
+.col{
+    margin: 0.8rem;
+    background-color: #ffffff;
+    height: 10rem;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.col h1{
+    margin-top: 1rem;
+    text-align: center;
+    line-height: inherit;
+}
+.wrapper{
+    padding: 1%;
+    padding-bottom: 6%;
+    width: 100%;
+    margin: 0 auto;     
+}
+.wrap {
+    padding: 1%;
+    width: 100%;
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.tbl-full{
+    width: 100%;
+}
+.tbl-30{
+    width: 30%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-all {
+    padding: 1%;
+    font-weight: bold;
+    border-radius: 2rem;
+    background-color: #e39f00;
+    color: #000000;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 96%;
+    margin-left: 1.6rem;
+}
+.btn-all:hover{
+    background-color: #000000;
+    color: #FEB100;
+    text-decoration: none;
+}
+
+
+
+.btn-secondary{
+    background-color: #7bed9f;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-secondary:hover{
+    background-color: #2ed573;
+}
+
+.btn-danger{
+    background-color: #ff6b81;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-danger:hover{
+    background-color: #ff4757;
+}
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+
+
+/* CSS for Menu */
+
+
+
+
+.col-4{
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+
+/* CSS for Footer */
+.footer {
+    color: #FEB100;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+/* CSS for Login */
+.login{
+    border: 1px solid white;
+    width: 20%;
+    margin: 10% auto;
+    padding: 2%;
+}
+
+/* Your orders Table */
+
+.content-table {
+    border-collapse: collapse;
+    font-size: 1.1em;
+    min-width: 800px;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-weight: 600; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+}
+
+.tbl-30{
+    height: auto;
+    width: auto;
+    display: flex;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.content-table tbody{
+    margin: 1rem;
+}
+.content-table tr td,
+.content-table tr th{
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #FEB100;
+}
+
+.nav-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.immg{
+    width: 70px;
+}
+
+img.category-img {
+    width: 150px;
+    height: 150px;
+}

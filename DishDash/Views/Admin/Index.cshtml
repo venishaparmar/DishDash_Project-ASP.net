@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-content">
+    <div class="wrapper">
+        <h1 style="font-weight: 600; text-align: center">Dashboard</h1>
+        <br /><br />
+        <br />
+        <div class="details">
+            <div class="col text-center">
+                <h1>@ViewBag.NumberOfCategories</h1>
+
+                Categories
+            </div>
+
+            <div class="col text-center">
+                <h1>@ViewBag.NumberOfProducts</h1>
+
+                Foods
+            </div>
+
+            <div class="col text-center">
+                <h1>@ViewBag.NumberOfOrders</h1>
+
+                Total Orders
+            </div>
+
+            <div class="col text-center">
+                <h1>₹@ViewBag.TotalRevenue</h1>
+
+                Revenue Generated
+            </div>
+        </div>
+    </div>
+</div>

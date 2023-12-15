@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "manage_category";
+}
+@{
+    Layout = null;
+}
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous" />
+<link href="~/Content/admin.css" rel="stylesheet" />
+<!-- Menu Section Starts -->
+<div class="menu text-center">
+    <div class="wrapper">
+        <div class="menu-content">
+            <img src="~/Content/index_img/dishdash_logo.png"
+                 alt="DishDash Cafe and Restro"
+                 class="logo" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manage-category.html">Category</a></li>
+                <li><a href="manage-food.html">Food</a></li>
+                <li><a href="manage-order.html">Order</a></li>
+                <li><a href="update-admin.html">Update Admin</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Menu Section Ends -->
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+                Manage Category
+            </h1>
+            <!-- Add your PHP code here to display messages if needed -->
+            <table class="content-table" style="font-weight: 600">
+                <tr>
+                    <th>S.N.</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Active</th>
+                    <th>Update Category</th>
+                    <th>Delete Category</th>
+                </tr>
+
+                <!-- Sample data for demonstration -->
+                <tr>
+                    <td>1.</td>
+                    <td style="font-weight: 600; text-align: center">Category 1</td>
+                    <td>
+                        <img src="~/Content/index_img/category1.jpg" width="100px" />
+                    </td>
+                    <td>Yes</td>
+                    <td>
+                        <a href="update-category.php">
+                            <img src="~/Content/index_img/icons8-synchronize-folder.gif" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#"><img src="~/Content/index_img/icons8-delete.gif" /></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td style="font-weight: 600; text-align: center">Category 2</td>
+                    <td>
+                        <img src="~/Content/index_img/category2.jpg" width="100px" />
+                    </td>
+                    <td>Yes</td>
+                    <td>
+                        <a href="update-category.php">
+                            <img src="~/Content/index_img/icons8-synchronize-folder.gif" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#"><img src="~/Content/index_img/icons8-delete.gif" /></a>
+                    </td>
+                </tr>
+                <!-- End of sample data -->
+                <!-- Add your PHP code here to display dynamic category data -->
+            </table>
+            <a href="add-category.html" class="btn-all" style="margin-top: 1rem">Add Category</a>
+        </div>
+    </div>
+</div>
+

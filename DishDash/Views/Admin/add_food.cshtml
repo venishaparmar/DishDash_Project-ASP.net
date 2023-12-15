@@ -1,0 +1,62 @@
+﻿@model List<DishDash.Category>
+
+@{
+    ViewBag.Title = "Add Food";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+                Add Food
+            </h1>
+            <!-- Add Food Form Starts -->
+            <form id="foodForm" action="@Url.Action("AddFood", "Admin")" method="POST" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <table class="tbl-30">
+                    <tr>
+                        <td>Title:</td>
+                        <td>
+                            <input type="text" name="title" placeholder="Title of the Food" pattern="[A-Za-z ]+" title="Only letters and spaces are allowed" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Price:</td>
+                        <td>
+                            <input type="number" name="price" min="0" step="0.01" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Select Image:</td>
+                        <td>
+                            <input type="file" name="image" accept=".png, .jpg, .svg" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Category:</td>
+                        <td>
+                            <select name="category">
+                                @foreach (var category in Model)
+                                {
+                                    <option value="@category.id">@category.title</option>
+                                }
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Active:</td>
+                        <td>
+                            <input type="radio" name="active" value="true" required /> Yes
+                            <input type="radio" name="active" value="false" required /> No
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn-all">Add Food</button>
+            </form>
+        </div>
+    </div>
+</div>

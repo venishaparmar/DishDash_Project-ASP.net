@@ -1,0 +1,53 @@
+﻿@model List<DishDash.Models.OrderViewModel>
+@{
+    ViewBag.Title = "update_order";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@if (Model != null && Model.Count > 0)
+{
+    <div class="main-content">
+        <div class="wrapper">
+            <div class="nav-details">
+                <h1 style="font-weight: 600; text-align: center; font-size: 2rem">Update Orders</h1>
+                @foreach (var order in Model)
+                {
+                    <form action="@Url.Action("updateOrder", "Admin", new { orderId = order.id })" method="POST">
+                        @Html.AntiForgeryToken()
+                        <table class="tbl-30">
+                            <tr>
+                                <td>Title:</td>
+                                <td><b>@order.ProductName</b></td>
+                            </tr>
+                            <tr>
+                                <td>Price:</td>
+                                <td><b>@order.ProductPrice</b></td>
+                            </tr>
+                            <tr>
+                                <td>Qty:</td>
+                                <td>
+                                    <b>@order.Quantity</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Status:</td>
+                                <td>
+                                    <select name="status">
+                                        <option value="On Delivery" @(order.Status == "On Delivery" ? "selected" : "")>On Delivery</option>
+                                        <option value="Delivered" @(order.Status == "Delivered" ? "selected" : "")>Delivered</option>
+                                        <option value="Unavailable" @(order.Status == "Unavailable" ? "selected" : "")>Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="submit" class="btn-all">Update Order</button>
+                    </form>
+                    <hr /> <!-- Add a visual separator between orders -->
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>No orders found</p>
+}

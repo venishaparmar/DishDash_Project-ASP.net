@@ -1,0 +1,62 @@
+﻿@model DishDash.Category
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-content">
+    <div class="wrapper">
+        <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+            Delete Category
+        </h1>
+
+        <div class="card">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.title)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.title)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        Active:
+                    </dt>
+                    <dd class="col-sm-9">
+                        @if (Model.active.HasValue)
+                        {
+                            <text>@(Model.active.Value ? "Yes" : "No")</text>
+                        }
+                        else
+                        {
+                            <text>N/A</text>
+                        }
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        Image:
+                    </dt>
+                    <dd class="col-sm-9">
+                        @if (Model.image != null && Model.image.Length > 0)
+                        {
+                            <img src="data:image;base64,@Convert.ToBase64String(Model.image)" width="100px" />
+                        }
+                        else
+                        {
+                            <span>No Image</span>
+                        }
+                    </dd>
+                </dl>
+                <hr />
+                @using (Html.BeginForm("DeleteCategory", "Admin", new { categoryId = Model.id.ToString() }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-danger" onclick="alert('Make sure you first delete the associated food product of this category...!')">Delete</button>
+                    @Html.ActionLink("Cancel", "manage_category", null, new { @class = "btn-all btn-secondary" })
+                }
+            </div>
+        </div>
+    </div>
+</div>

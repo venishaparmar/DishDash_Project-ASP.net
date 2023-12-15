@@ -1,0 +1,44 @@
+﻿@model DishDash.Category
+
+@{
+    ViewBag.Title = "add_category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/category_validation.js"></script>
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+                Add Category
+            </h1>
+            <form action="@Url.Action("AddCategory", "Admin")" method="POST" enctype="multipart/form-data">
+                
+                    @Html.AntiForgeryToken()
+                    <table class="tbl-30" style="font-weight: 600; font-size: 1.2em">
+                        <tr>
+                            <td>Title:</td>
+                            <td>
+                                <input type="text" name="title" placeholder="Category Title" pattern="[A-Za-z ]+" title="Only letters are allowed" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Select Image:</td>
+                            <td>
+                                <input type="file" name="image" accept=".png, .jpg, .svg" required />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Active:</td>
+                            <td>
+                                <input type="radio" name="active" value="true" required /> Yes
+                                <input type="radio" name="active" value="false" required /> No
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit" class="btn-all">Add Category</button>
+            </form>    
+        </div>
+    </div>
+</div>

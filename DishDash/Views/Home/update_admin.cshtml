@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "update_admin";
+}
+
+@{
+    Layout = null;
+}
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous" />
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<!-- Menu Section Starts -->
+<div class="menu text-center">
+    <div class="wrapper">
+        <div class="menu-content">
+            <img src="~/Content/index_img/dishdash_logo.png"
+                 alt="DishDash Cafe and Restro"
+                 class="logo" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manage-category.html">Category</a></li>
+                <li><a href="manage-food.html">Food</a></li>
+                <li><a href="manage-order.html">Order</a></li>
+                <li><a href="update-admin.html">Update Admin</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Menu Section Ends -->
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+                Update Admin
+            </h1>
+            <form action="#" method="">
+                <table class="tbl-30" style="font-weight: 600; font-size: 1.5em">
+                    <tr>
+                        <td>Full Name:</td>
+                        <td>
+                            <input type="text" name="full_name" value="" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Username:</td>
+                        <td>
+                            <input type="text" name="username" value="" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <a href="update-password.html" class="btn-all">
+                Update Admin
+            </a>
+        </div>
+    </div>
+</div>
+

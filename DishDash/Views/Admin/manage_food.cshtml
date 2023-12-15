@@ -1,0 +1,58 @@
+﻿@model List<DishDash.Product>
+@{
+    ViewBag.Title = "manage_food";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">Manage Food</h1>
+
+            <table class="content-table">
+                <tr>
+                    <th>S.N.</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Active</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                @if (Model != null && Model.Any())
+                {
+                    var counter = 1;
+                    foreach (var food in Model)
+                    {
+                        <tr>
+                            <td>@counter</td>
+                            <td>@food.title</td>
+                            <td>₹@food.price.ToString("0.00")</td>
+                            <td>
+                                <img src="data:image;base64,@Convert.ToBase64String(food.image)" width="100px">
+                            </td>
+                            <td>@(food.active ? "Yes" : "No")</td>
+                            <td>
+                                <a href="@Url.Action("update_food", "Admin", new{ foodId = food.id })">
+                                    <img src="~/Content/index_img/icons8-synchronize-folder.gif">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("delete_food", "Admin", new{ foodId = food.id })">
+                                    <img class="iimg" src="~/Content/index_img/icons8-delete.gif" />
+                                </a>
+                            </td>
+                        </tr>
+                        counter++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7">No food items found</td>
+                    </tr>
+                }
+            </table>
+            <a href="@Url.Action("add_food", "Admin")" class="btn-all" style="margin-top: 1rem;">Add Food</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1da543fc6e2f4c44968b15247010b2ae" Name="Diagram1">
+        <EntityTypeShape EntityType="DishDashModel.AddToCart" Width="1.5" PointX="3.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Admin" Width="1.5" PointX="10.875" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Category" Width="1.5" PointX="1.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Customer" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Ordered_Items" Width="1.5" PointX="3.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Order" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Payment" Width="1.5" PointX="8.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.Receipt" Width="1.5" PointX="10.375" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DishDashModel.User" Width="1.5" PointX="5.125" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="DishDashModel.FK__AddToCart__produ__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__AddToCart__user___3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Product__categor__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Customer__user_i__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Payment__custome__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Receipt__custome__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Ordered_I__order__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Ordered_I__produ__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Orders__payment___300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Receipt__ordered__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="DishDashModel.FK__Receipt__payment__3A81B327" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

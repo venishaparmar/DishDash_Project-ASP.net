@@ -1,0 +1,55 @@
+﻿@model DishDash.Category
+
+@{
+    ViewBag.Title = "update_category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">Update Category</h1>
+            <form action="@Url.Action("update_category", "Admin", new { categoryId = Model.id })" method="POST" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <table class="tbl-30">
+                    <tr>
+                        <td>Title: </td>
+                        <td>
+                            <input type="text" name="title" value="@Model.title" pattern="[A-Za-z ]+" title="Only letters and spaces are allowed" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Current Image: </td>
+                        <td>
+                            @if (Model.image != null && Model.image.Length > 0)
+                            {
+                                <img src="data:image;base64,@Convert.ToBase64String(Model.image)" />
+                            }
+                            else
+                            {
+                                <span>No Image</span>
+                            }
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>New Image: </td>
+                        <td>
+                            <input type="file" name="image" accept=".png, .jpg, .svg">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Active: </td>
+                        <td>
+                            <input type="radio" name="active" value="true" @(Model.active.HasValue && Model.active.Value ? "checked" : "") required> Yes
+                            <input type="radio" name="active" value="false" @(Model.active.HasValue && !Model.active.Value ? "checked" : "") required> No
+                        </td>
+                    </tr>
+                </table>
+
+                <button type="submit" class="btn-all">Update Category</button>
+            </form>
+        </div>
+    </div>
+</div>

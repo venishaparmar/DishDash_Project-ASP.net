@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+<link href="~/Content/login_style.css" rel="stylesheet" />
+    <div class="inner-banner" >
+        <div class="inner">
+            <h2>Welcome To the Fooddy World</h2>
+            <div class="breadcrumb-list-wrap">
+                <ul>
+                    <li>Join Us By Login In</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <section class="feedback-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="feedback-img">
+                        <img src="~/Content/index_img/feedback.png" alt="" />
+                    </div>
+                </div>
+                <div class="col-md-6 ps-lg-5 mt-4 mt-md-0">
+                    <h2 class="main-title">Login</h2>
+                    <div class="feedback-form">
+                        <div id="emailMsg"></div>
+                        <form class="needs-validation" id="contact_form" novalidate="" method="post">
+                            <input type="hidden" name="sendEmail" value="ok" />
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" maxlength="254" class="form-control" placeholder="Enter your email address" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter Your Password" />
+                            </div>
+
+                            <div id="overlay" class="mb-1"></div>
+                            <button class="btn btn-primary" type="submit" id="btn_submit">Login</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+

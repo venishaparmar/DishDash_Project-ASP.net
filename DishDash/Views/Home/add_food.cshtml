@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "add_food";
+}
+@{
+    Layout = null;
+}
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous" />
+<link href="~/Content/admin.css" rel="stylesheet" />
+<!-- Menu Section Starts -->
+<div class="menu text-center">
+    <div class="wrapper">
+        <div class="menu-content">
+            <img src="~/Content/index_img/dishdash_logo.png"
+                 alt="DishDash Cafe and Restro"
+                 class="logo" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manage-category.html">Category</a></li>
+                <li><a href="manage-food.html">Food</a></li>
+                <li><a href="manage-order.html">Order</a></li>
+                <li><a href="update-admin.html">Update Admin</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Menu Section Ends -->
+<div class="main-content">
+    <div class="wrapper">
+        <div class="nav-details">
+            <h1 style="font-weight: 600; text-align: center; font-size: 2rem">
+                Add Food
+            </h1>
+            <!-- Add Food Form Starts -->
+            <form action="" method="POST" enctype="multipart/form-data">
+                <table class="tbl-30">
+                    <tr>
+                        <td>Title:</td>
+                        <td>
+                            <input type="text"
+                                   name="title"
+                                   placeholder="Title of the Food" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Price:</td>
+                        <td>
+                            <input type="number" name="price" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Select Image:</td>
+                        <td>
+                            <input type="file" name="image" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Category:</td>
+                        <td>
+                            <select name="category">
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                                <option value="3">Category 3</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Active:</td>
+                        <td>
+                            <input type="radio" name="active" value="Yes" /> Yes
+                            <input type="radio" name="active" value="No" /> No
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <button class="btn-all">Add Food</button>
+        </div>
+    </div>
+</div>

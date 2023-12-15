@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "payment";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/payment_style.css" rel="stylesheet" />
+<link href="~/Content/signup_style.css" rel="stylesheet" />
+<div class="inner-banner">
+
+    <div class="inner">
+        <h2>Welcome To the Fooddy World</h2>
+        <div class="breadcrumb-list-wrap">
+            <ul>
+                <li>Choose Your Payment Method</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<form id="paymentForm" method="post" action="@Url.Action("ProcessPayment", "Home")">
+    <div id="container">
+        <div id="payment-options">
+            <h2>Payment Options</h2>
+            <ul>
+                <li><input type="radio" name="payment" id="card"> <label for="card">Credit/Debit Card</label></li>
+                <li><input type="radio" name="payment" id="upi"> <label for="upi">UPI</label></li>
+                <li><input type="radio" name="payment" id="cash"> <label for="cash">Cash on Delivery</label></li>
+            </ul>
+        </div>
+
+        <div id="amount-details">
+            <h2>Amount Details</h2>
+            <ul>
+                <li>Subtotal:@ViewBag.TotalAmount rs.</li>
+                <li>Taxes: @ViewBag.Tax rs.
+                <li>
+                <li>Total: @ViewBag.FinalBill rs.</li>
+            </ul>
+
+            <input type="hidden" name="selectedPayment" id="selectedPayment" value="">
+            <input type="hidden" name="finalBill" id="finalBill" value="@ViewBag.FinalBill">
+
+            <button id="proceed-to-pay" class="btn btn-primary" type="submit" disabled>Proceed to Pay</button>
+        </div>
+    </div>
+</form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentOptions = document.querySelectorAll('input[name="payment"]');
+            const proceedToPayBtn = document.getElementById('proceed-to-pay');
+
+            function checkPaymentMethodSelected() {
+                const paymentSelected = [...paymentOptions].some(option => option.checked);
+                proceedToPayBtn.disabled = !paymentSelected;
+            }
+
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', checkPaymentMethodSelected);
+            });
+
+            checkPaymentMethodSelected();
+        });
+    </script>

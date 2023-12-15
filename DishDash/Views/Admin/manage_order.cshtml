@@ -1,0 +1,53 @@
+﻿@model List<DishDash.Models.OrderViewModel>
+@{
+    ViewBag.Title = "manage_order";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="wrapper">
+    <h1 style="font-weight: 600; text-align: center; font-size:2rem">Manage Order</h1>
+</div>
+
+<table class="content-table">
+    <tr>
+        <th>S.N.</th>
+        <th>Food</th>
+        <th>Price</th>
+        <th>Qty.</th>
+        <th>Total</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>Update Orders</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        var counter = 1;
+        foreach (var order in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@order.ProductName</td>
+                <td>@order.ProductPrice</td>
+                <td>@order.Quantity</td>
+                <td>@order.TotalAmount</td>
+                <td>@order.OrderDate</td>
+                <td>@order.Status</td>
+                <td>
+                    <a href="@Url.Action("update_order", "Admin", new { orderId = order.id })">
+                        <img src="~/Content/index_img/icons8-synchronize-folder.gif" />
+                    </a>
+                </td>
+            </tr>
+            counter++;
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="8">No orders found</td>
+        </tr>
+    }
+
+</table>
+<br>
+<br>
+
